@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一键宝贝生成器</title>
+    <!--<script type="text/javascript" src="static/js/jquery.js"></script>-->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+<h1>一键生成笨蛋宝贝</h1>
+<input type="button" id="button" onclick="getEnd()" value="生成"/>
+<div>
+    <span>姓名：</span>
+    <input type="text" id="name">
+</div>
+<div>
+    <span>身高：</span>
+    <input type="text" id="height">
+</div>
+<div>
+    <span>体重：</span>
+    <input type="text" id="weight">
+</div>
+<div>
+    <span>最爱的人：</span>
+    <input type="text" id="loveName">
+</div>
+<script type="text/javascript">
+    var v1 = ["小笨蛋","憨宝贝","小乖乖","慧宝宝","乖宝贝"];
+    var v2 = ["明哥哥","小徐","慧慧的老公","老公"];
+    function random(minNum,maxNum){
+        switch(arguments.length){
+            case 1:
+                return parseInt(Math.random()*minNum+1,10);
+                break;
+            case 2:
+                return parseInt(Math.random()*(maxNum-minNum+1)+minNum,10);
+                break;
+            default:
+                return 0;
+                break;
+        }
+    }
+    function getEnd() {
+        $("#name").val(v1[random(1,4)-1]);
+        $("#height").val(random(150,153));
+        $("#weight").val(random(55,65));
+        $("#loveName").val(v2[random(1,4)-1]);
+    }
+</script>
+</body>
+</html>
